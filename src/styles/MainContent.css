@@ -1,0 +1,181 @@
+ .main-content {
+  padding: 20px;
+}
+
+.intro-section ,.Aboutus-section ,.Aboutautism-section {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 40px;
+}
+
+.Aboutus-section ,.clients-section,.features-section ,.Causes-section ,.Aboutautism-section {
+ background-color: #d1d9e2;
+}
+.Aboutus-section  {
+  gap: 30px;
+ }
+.Aboutautism-section  {
+  gap: 100px;
+ }
+.Aboutus-section img {
+  width: 400px;
+}
+
+.text-content {
+  flex: 1;
+  max-width: 60%;
+  font-family: "Inter", serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+.text-content h1 {
+  font-size: 2em;
+  margin-bottom: 0.5em;
+  color: #333;
+  font-family: "Inter", serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+.login-button {
+    padding: 10px 60px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #4CAF50;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.text-content h2 {
+  font-size: 1.5em;
+  color: #4caf50;            
+  margin-bottom: 1em;
+  font-family: "Inter", serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+.text-content p {
+  color: #555;
+  margin-bottom: 1em;
+  line-height: 1.5;
+  font-family: "Inter", serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+
+.text-content .login-button:hover {
+  background-color: #45a049;
+}
+
+.image-content img {
+  max-width: 70%;
+  height: auto;
+  object-fit: cover;
+}
+
+.clients-section ,.clients-section ,.Aboutus-section {
+  padding: 60px ;
+}
+.clients-section h2 ,.features-section h2{
+  text-align: center;
+}
+.client-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px; 
+  padding: 40px ;
+}
+
+.client-grid img {
+  width: 100px;
+  height: auto;
+  object-fit:cover;
+}
+
+
+
+.features-grid {
+  padding: 40px ;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+
+}
+
+.feature-card {
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  text-align: center;
+  background-color: #fff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: scale(0.95); 
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); 
+}
+
+.feature-card h4 {
+  margin-bottom: 10px;
+  font-size: 1.2em;
+  font-family: "Inter", serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+.feature-card p {
+  font-size: 1em;
+  color: #555;
+  font-family: "Inter", serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+} 
+
+.Aboutautism-section img {
+  width: 300px;
+}
+.Causes-section h2{
+  text-align: center;
+  font-family: "Inter", serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+.Causes-section p{
+  text-align: center;
+  font-family: "Inter", serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+.Causes-grid {
+  padding: 40px ;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.Causes-card {
+  padding: 0px;
+  width: 300px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  text-align: center;
+  background-size: cover;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.Causes-card img{
+    object-fit: cover; /* Ensures image fills the card */
+    width: 100%; /* Make the image take the full width */
+    height: 100%; /* Make the image take the full height */
+}
+
+.Causes-card:hover {
+  transform: scale(0.95); 
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); 
+}
+
