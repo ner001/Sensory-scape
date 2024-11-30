@@ -9,20 +9,11 @@ export default function Fiche() {
 
   // Find the patient based on the patientId from the URL
   const patient = patients.find(p => p.id === Number(patientId));
- 
+
+  console.log(patientId);
   return (
     <main className='bg-[#F5F5F5] min-h-screen'> 
-      <div className='flex w-full justify-between items-start'> 
-        <div className='flex flex-col justify-between mb-96 h-[450px]  items-center w-[55%]'> 
-          <div className='w-full h-80 justify-between items-center'> 
-            <div className='flex flex-col gap-4 justify-center items-start'> 
-              <span className='text-[#274C77] pl-14 lato text-xl flex justify-center font-bold items-center     gap-4'><img src={house} width={30}/><div>Monitoring</div></span> 
-              <span className='text-[#274C77] pl-14 lato text-xl flex justify-center font-bold items-center gap-4'><img src={smartphone} width={30}/><div>Control Panel</div></span> 
-              <span className=' pl-14 lato text-xl flex justify-center font-bold bg-teal-800 rounded-r-3xl py-3 text-white px-11 items-center gap-4'><img src={smartphone} width={30}/><div>Dashboard</div></span> 
-              <span className='text-[#274C77] pl-14 lato text-xl flex justify-center font-bold items-center gap-4'><img src={settings} width={30}/><div>Settings</div></span>  
-            </div>  
-          </div>  
-        </div>   
+      <div className='flex w-full justify-between items-start'>   
         <div className='w-[85%] px-12 flex justify-around items-center '>  
             <div className='w-[50%] flex flex-col justify-start items-center '> 
                 <div className='flex flex-col gap-3 w-full justify-center py-5 items-center shadow-2xl rounded-2xl'> 

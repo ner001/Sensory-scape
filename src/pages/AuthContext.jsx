@@ -9,12 +9,12 @@ export const AuthProvider = ({ children }) => {
 
   // SignIn function
   const signIn = async (email, password) => {
-    try {
-      const userCredential = await auth.signInWithEmailAndPassword(email, password);
-      setUser(userCredential.user); // Store the authenticated user
-    } catch (error) {
-      throw new Error(error.message); // Handle error
-    }
+    // try {
+    //   const userCredential = await auth.signInWithEmailAndPassword(email, password);
+    //   setUser(userCredential.user); // Store the authenticated user
+    // } catch (error) {
+    //   throw new Error(error.message); // Handle error
+    // }
   };
 
   return (

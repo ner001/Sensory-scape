@@ -12,7 +12,7 @@ import patients from '../assets/Patients'
 
 const Layout = (children  ) => {
   const navigate = useNavigate();
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(true);
 
   
   const NavItems = [
@@ -102,8 +102,7 @@ const Layout = (children  ) => {
                              hover:bg-teal-50 rounded-lg transition-colors 
                              cursor-pointer text-sm pl-6'
                   onClick={() => {
-                    navigate(`/patient/${patient.id}`);
-                    setIsMobileMenuOpen(false);
+                    navigate(`/dashboard/patient/${patient.id}`);
                   }}
                 >
                   {patient.name}

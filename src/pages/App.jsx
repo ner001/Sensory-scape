@@ -8,9 +8,11 @@ import SignIn from './SignIn';
 import SignUp from './SignUp';
 import Shop from './Shop';
 import ForumPage from './ForumPage';
-import About from './About';
-import Contact from './Contact';
-
+import Layout from './appbefore';
+import Board from './Board';
+import Control from './ControlPanel';
+import Fiche from './Fiche';
+import Home from './Home';
 
 function App() {
   return (
@@ -22,8 +24,14 @@ function App() {
         <Route path="/signin" element={<SignIn />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/shop" element={<Shop />} />
-        <Route path="/about" element={<About/>} />
-        <Route path="/contact" element={<Contact/>} />
+
+        {/* Layout Routes */}
+        <Route path="/dashboard" element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="control" element={<Control />} />
+          <Route path="board" element={<Board />} />
+          <Route path="patient/:patientId" element={<Fiche />} />
+        </Route>
       </Routes>
     </AuthProvider>
   );
