@@ -8,7 +8,7 @@ const SignIn = () => {
 
   const handleSignIn = () => {
     login(); // Sign in logic
-    navigate('/layout'); // Navigate to the home page after sign-in
+    navigate('/dashboard'); // Navigate to the home page after sign-in
   };
 
   return (
