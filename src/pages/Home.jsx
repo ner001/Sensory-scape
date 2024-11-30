@@ -39,10 +39,10 @@ const Home = () => {
   const [notifications, setNotifications] = useState([]);
   
 useEffect(() => {
-  const socket = io('https://tn56.loca.lt', {
+  const socket = io('http://tn56.loca.lt', {
     transports: ['websocket', 'polling'], // Ensure compatibility
   });
-  
+
   socket.on('connect', () => {
     console.log('Connected to server');
   });

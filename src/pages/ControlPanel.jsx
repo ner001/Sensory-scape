@@ -12,7 +12,7 @@ export default function Control() {
   });
 
   useEffect(() => {
-    const socket = io('https://tn56.loca.lt', {
+    const socket = io('http://tn56.loca.lt', {
       transports: ['websocket', 'polling'], // Ensure compatibility
     });
     
