@@ -5,11 +5,9 @@ import Header from "../components/Header";
 const Contact = () => {
   return (
     <div className="shop-page bg-gradient-to-r  from-gray-800 to-green-400 font-sans">
-      {/* Header Section */}
-      <header className="header sticky top-0 z-50">
+      <header  className='fixed w-full'>
         <Header />
       </header>
-
       {/* Contact Section */}
       <section className="container mx-auto px-6 py-16">
         <h2 className="text-4xl font-bold text-center text-gray-800">

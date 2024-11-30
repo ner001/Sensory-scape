@@ -1,15 +1,30 @@
+// Header.jsx
 import React from 'react';
 import logo from '../assets/Logo.png';
 import { Link } from 'react-router-dom';
 
 const Header = () => {
+  const scrollToFeatures = (e) => {
+    e.preventDefault();
+    const featuresSection = document.getElementById('features');
+    if (featuresSection) {
+      featuresSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <header className="bg-white shadow-md sticky top-0 z-50">
       <nav className="flex items-center font-semibold justify-between px-6 py-4 max-w-screen-xl mx-auto">
         {/* Left side: Navigation Links */}
         <div className="flex space-x-9">
-          <Link to="/" className="text-lg  text-gray-800 hover:text-green-500 transition-all duration-300">Home</Link>
-          <Link  to="/features" className="text-lg text-gray-800 hover:text-green-500 transition-all duration-300">Features</Link>
+          <Link to="/" className="text-lg text-gray-800 hover:text-green-500 transition-all duration-300">Home</Link>
+          <a 
+            href="#features" 
+            onClick={scrollToFeatures}
+            className="text-lg text-gray-800 hover:text-green-500 transition-all duration-300"
+          >
+            Features
+          </a>
           <Link to="/forums" className="text-lg text-gray-800 hover:text-green-500 transition-all duration-300">Forums</Link>
         </div>
         

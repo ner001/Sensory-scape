@@ -8,7 +8,7 @@ const About = () => {
   return (
     <div className="bg-gradient-to-r from-green-400 to-gray-800 text-gray-900 font-sans">
       {/* Header Section */}
-      <header >
+      <header  className='fixed w-full'>
         <Header />
       </header>
 
