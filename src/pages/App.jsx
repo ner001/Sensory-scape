@@ -15,7 +15,6 @@ import Fiche from './Fiche';
 import Home from './Home';
 import Contact from './Contact';
 import About from './About';
-import SensorDashboard from './websockettest';
 
 function App() {
   return (
@@ -36,7 +35,6 @@ function App() {
           <Route path="control" element={<Control />} />
           <Route path="board" element={<Board />} />
           <Route path="patient/:patientId" element={<Fiche />} />
-          <Route path="sensors" element={<SensorDashboard />} />
         </Route>
       </Routes>
     </AuthProvider>

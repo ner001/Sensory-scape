@@ -12,8 +12,10 @@ export default function Control() {
   });
 
   useEffect(() => {
-    const socket = io('http://localhost:5000'); // Adjust to your backend's actual URL
-
+    const socket = io('https://tn56.loca.lt', {
+      transports: ['websocket', 'polling'], // Ensure compatibility
+    });
+    
     socket.on('connect', () => {
       console.log('Connected to server');
     });
@@ -22,13 +24,8 @@ export default function Control() {
       // check the data structure sent by the server
       if (data.Vibration) {
         setSensorData(data);
-        return;
       }
     });
-
-    return () => {
-      socket.disconnect();
-    };
   }, []);
 
   return (
