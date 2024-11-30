@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import screen1 from '/Group 10.png'; 
-import screen2 from '/Group 11.png'; 
+import screen1 from '../../public/Group 10.png';
+import screen2 from '../../public/Group 11.png'; 
 import patients from '../assets/Patients';
 
 export default function Board(){
