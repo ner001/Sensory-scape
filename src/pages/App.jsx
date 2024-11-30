@@ -7,6 +7,7 @@ import SignIn from './SignIn';
 import SignUp from './SignUp';
 import Shop from './Shop';
 import ForumPage from './ForumPage';
+import Layout from './before app';
 
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
         <Route path="/signin" element={<SignIn />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/shop" element={<Shop />} />
+        <Route path="/layout" element={<Layout />} />
       </Routes>
     </AuthProvider>
   );

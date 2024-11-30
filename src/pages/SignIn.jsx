@@ -3,12 +3,12 @@ import { useNavigate } from 'react-router-dom';
 import { useAuth } from './AuthContext';
 
 const SignIn = () => {
-  const { signIn } = useAuth(); // Access signIn function from AuthContext
+  const { login } = useAuth(); // Access signIn function from AuthContext
   const navigate = useNavigate(); // For navigation
 
   const handleSignIn = () => {
-    signIn(); // Sign in logic
-    navigate('/'); // Navigate to the home page after sign-in
+    login(); // Sign in logic
+    navigate('/layout'); // Navigate to the home page after sign-in
   };
 
   return (
