@@ -7,7 +7,6 @@ import lines from '../../public/Lines.png'
 import teacher from '../../public/Teacher.png'
 import house from '../../public/House.png'
 import smartphone from '../../public/Icon - Devices.png' 
-import settings from '../../public/Settings.png'
 import patients from '../assets/Patients'
 
 const Layout = (children  ) => {
