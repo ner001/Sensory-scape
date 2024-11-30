@@ -7,18 +7,19 @@ import Control from './ControlPanel'
 import Shop from "./Shop"
 
 // Shared components and assets
-import logo from '/Logo.png'
-import lines from '/Lines.png'
-import teacher from '/Teacher.png'
-import house from '/House.png'
-import smartphone from '/Icon - Devices.png'
-import settings from '/Settings.png'
+import logo from '../../public/Logo.png'
+import lines from '../../public/Lines.png'
+import teacher from '../../public/Teacher.png'
+import house from '../../public/House.png'
+import smartphone from '../../public/Icon - Devices.png' 
+import settings from '../../public/Settings.png'
 import patients from '../assets/Patients'
 
-function Layout({ children }) {
+const Layout = (children) => {
   const navigate = useNavigate();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
+  
   const NavItems = [
     { 
       to: "/", 
@@ -162,3 +163,6 @@ function Layout({ children }) {
     </div>
   )
 }
+
+
+export default Layout;

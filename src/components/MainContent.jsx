@@ -11,7 +11,7 @@ const MainContent = () => {
     <main className="main-content font-sans">
 
       {/* Intro Section */}
-      <section className="flex items-center justify-between py-12 px-6 md:px-12 bg-gradient-to-r from-green-400 to-blue-600 text-white">
+      <section className="flex items-center justify-between py-12 px-6 md:px-12 bg-gradient-to-r from-green-400 to-gray-800 text-white">
         <div className="max-w-xl space-y-6">
           <h1 className="text-4xl font-semibold leading-tight">Sensory Scape</h1>
           <h2 className="text-2xl font-medium">They deserve better!</h2>

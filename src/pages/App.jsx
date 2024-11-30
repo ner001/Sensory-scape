@@ -7,7 +7,8 @@ import SignIn from './SignIn';
 import SignUp from './SignUp';
 import Shop from './Shop';
 import ForumPage from './ForumPage';
-import Dashboard from './Dashboard'; 
+import About from './About';
+import Contact from './Contact';
 
 
 function App() {
@@ -20,11 +21,10 @@ function App() {
         <Route path="/signin" element={<SignIn />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/shop" element={<Shop />} />
-        {/* Protected Routes */}
-        <Route path="/dashboard" element={<Dashboard />} /> 
+        <Route path="/about" element={<About/>} />
+        <Route path="/contact" element={<Contact/>} />
       </Routes>
     </AuthProvider>
-
   );
 }
 

@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { useAuth } from './AuthContext'; // Make sure your AuthContext provides signIn function
 
 const SignIn = () => {
-  const { signIn } = useAuth(); // Access signIn function from AuthContext
+  const { login } = useAuth(); // Access signIn function from AuthContext
   const navigate = useNavigate(); // For navigation
 
   // State for managing form input values
