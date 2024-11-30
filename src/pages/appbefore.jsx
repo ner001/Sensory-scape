@@ -116,12 +116,14 @@ const Layout = (children  ) => {
         <div className='bg-gradient-to-r from-slate-400 to-[#2B4C40] 
                         rounded-2xl p-6 text-center m-4'>
           <span className='text-white font-bold block mb-4'>Need Help?</span>
-          <button 
+        <Link to="/contact">
+          <button
             className='bg-white w-full rounded-lg py-2 text-sm 
-                       hover:bg-gray-100 transition-colors'
+                      hover:bg-gray-100 transition-colors'
           >
             Contact Support
           </button>
+        </Link>
         </div>
       </div>
       
