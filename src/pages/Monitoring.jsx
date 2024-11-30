@@ -3,7 +3,7 @@ import { Routes, Route, Link, useNavigate, NavLink } from 'react-router-dom'
 import Home from './Home'
 import Board from './Board'
 import Fiche from './Fiche'
-import Control from './Control'
+import Control from './ControlPanel'
 import Shop from "./Shop"
 
 // Shared components and assets

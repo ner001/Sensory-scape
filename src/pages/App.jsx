@@ -7,6 +7,7 @@ import SignIn from './SignIn';
 import SignUp from './SignUp';
 import Shop from './Shop';
 import ForumPage from './ForumPage';
+import Dashboard from './Dashboard'; 
 
 
 function App() {
@@ -19,8 +20,11 @@ function App() {
         <Route path="/signin" element={<SignIn />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/shop" element={<Shop />} />
+        {/* Protected Routes */}
+        <Route path="/dashboard" element={<Dashboard />} /> 
       </Routes>
     </AuthProvider>
+
   );
 }
 

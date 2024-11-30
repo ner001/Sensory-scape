@@ -9,8 +9,7 @@ const ForumPage = () => {
       <header className="bg-white shadow-md py-4">
         <div className="container mx-auto flex justify-between items-center px-4">
           <div className="flex items-center">
-            <img src="./logo.png" alt="SensoryForums" className="h-8 mr-4" />
-            <span className="font-bold text-gray-800 text-lg">SensoryForums</span>
+            <img src=".\src\assets\g.png" alt="SensoryForums" className="h-8 mr-4" />
           </div>
           <button className="bg-green-500 hover:bg-green-600 text-white font-medium py-2 px-4 rounded-lg flex items-center space-x-2">
             <HiOutlinePlusCircle className="text-lg" />
@@ -24,27 +23,27 @@ const ForumPage = () => {
           <div className="col-span-1 bg-white shadow-md rounded-lg p-6">
             <h3 className="font-bold text-gray-800 mb-4">MENU</h3>
             <ul className="space-y-2 text-gray-600">
-              <li className="flex items-center space-x-2 hover:text-blue-600 cursor-pointer">
+              <li className="flex items-center space-x-2 hover:text-green-700 cursor-pointer">
                 <FaQuestionCircle className="text-xl" />
                 <span>Questions</span>
               </li>
-              <li className="flex items-center space-x-2 hover:text-blue-600 cursor-pointer">
+              <li className="flex items-center space-x-2 hover:text-green-700 cursor-pointer">
                 <FaTags className="text-xl" />
                 <span>Tags</span>
               </li>
-              <li className="flex items-center space-x-2 hover:text-blue-600 cursor-pointer">
+              <li className="flex items-center space-x-2 hover:text-green-700 cursor-pointer">
                 <FaTrophy className="text-xl" />
                 <span>Ranking</span>
               </li>
-              <li className="flex items-center space-x-2 hover:text-blue-600 cursor-pointer">
+              <li className="flex items-center space-x-2 hover:text-green-700 cursor-pointer">
                 <FaUserAlt className="text-xl" />
                 <span>Your questions</span>
               </li>
-              <li className="flex items-center space-x-2 hover:text-blue-600 cursor-pointer">
+              <li className="flex items-center space-x-2 hover:text-green-700 cursor-pointer">
                 <FaThumbsUp className="text-xl" />
                 <span>Your answers</span>
               </li>
-              <li className="flex items-center space-x-2 hover:text-blue-600 cursor-pointer">
+              <li className="flex items-center space-x-2 hover:text-green-700 cursor-pointer">
                 <FaCommentDots className="text-xl" />
                 <span>Your likes & votes</span>
               </li>
@@ -67,8 +66,8 @@ const ForumPage = () => {
                 <div className="bg-gray-50 rounded-lg p-4">
                   <div className="flex items-center justify-between mb-2">
                     <div className="flex items-center">
-                      <img src="./avatar1.png" alt="Golanginya" className="rounded-full w-8 h-8 mr-2" />
-                      <span className="font-medium text-gray-800">Golanginya</span>
+                      <img src="Sensory scape\src\assets\Ava.png"  className="rounded-full w-8 h-8 mr-2" />
+                      <span className="font-medium text-gray-800">Amina</span>
                     </div>
                     <div className="text-gray-500 text-sm">6 min ago</div>
                   </div>
@@ -89,7 +88,7 @@ const ForumPage = () => {
                   <div className="flex items-center justify-between mb-2">
                     <div className="flex items-center">
                       <img src="./avatar2.png" alt="Linuxoid" className="rounded-full w-8 h-8 mr-2" />
-                      <span className="font-medium text-gray-800">Linuxoid</span>
+                      <span className="font-medium text-gray-800">Ala</span>
                     </div>
                     <div className="text-gray-500 text-sm">25 min ago</div>
                   </div>
@@ -110,7 +109,7 @@ const ForumPage = () => {
                   <div className="flex items-center justify-between mb-2">
                     <div className="flex items-center">
                       <img src="./avatar3.png" alt="AizhanMaratovna" className="rounded-full w-8 h-8 mr-2" />
-                      <span className="font-medium text-gray-800">AizhanMaratovna</span>
+                      <span className="font-medium text-gray-800">Sameh</span>
                     </div>
                     <div className="text-gray-500 text-sm">3 days ago</div>
                   </div>
@@ -131,7 +130,7 @@ const ForumPage = () => {
                   <div className="flex items-center justify-between mb-2">
                     <div className="flex items-center">
                       <img src="./avatar4.png" alt="Lola" className="rounded-full w-8 h-8 mr-2" />
-                      <span className="font-medium text-gray-800">Lola</span>
+                      <span className="font-medium text-gray-800">Mohamed</span>
                     </div>
                     <div className="text-gray-500 text-sm">2 days ago</div>
                   </div>

@@ -1,18 +1,25 @@
-import React, { createContext, useState, useContext } from 'react';
+import { createContext, useContext, useState } from 'react';
 
 const AuthContext = createContext();
 
-export const AuthProvider = ({ children }) => {
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
+export const useAuth = () => useContext(AuthContext);
 
-  const login = () => setIsAuthenticated(true);
-  const logout = () => setIsAuthenticated(false);
+export const AuthProvider = ({ children }) => {
+  const [user, setUser] = useState(null);
+
+  // SignIn function
+  const signIn = async (email, password) => {
+    try {
+      const userCredential = await auth.signInWithEmailAndPassword(email, password);
+      setUser(userCredential.user); // Store the authenticated user
+    } catch (error) {
+      throw new Error(error.message); // Handle error
+    }
+  };
 
   return (
-    <AuthContext.Provider value={{ isAuthenticated, login, logout }}>
+    <AuthContext.Provider value={{ user, signIn }}>
       {children}
     </AuthContext.Provider>
   );
 };
-
-export const useAuth = () => useContext(AuthContext);
