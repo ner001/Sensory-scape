@@ -22,12 +22,6 @@ const Layout = (children  ) => {
       activeClassName: "bg-teal-800 text-white"
     },
     { 
-      to: "/dashboard/sensors", 
-      icon: house, 
-      label: "Sensor Data",
-      activeClassName: "bg-teal-800 text-white"
-    },
-    { 
       to: "/dashboard/control", 
       icon: house, 
       label: "DashBoard",

@@ -5,7 +5,7 @@ import img7 from '/Group 37.png';
 import img8 from '/Group 35.png';
 import img9 from '/Group 1000001772 (1).png';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts';
-import { Card, CardHeader, CardTitle, CardContent } from '../../@/components/ui/card';
+import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
 
 const Home = () => {
   const [sensorData, setSensorData] = useState([
@@ -38,60 +38,64 @@ const Home = () => {
   const [graphData, setGraphData] = useState([]);
   const [notifications, setNotifications] = useState([]);
   
-useEffect(() => {
-  const socket = io('http://localhost:5000');
-
-  socket.on('connect', () => {
-    console.log('Connected to server');
-  });
-
-  socket.on('sensor_update', (data) => {
-    // Parse numeric values from strings
-    const temperatureValue = parseFloat(data['Vest Temperature'].value.replace('°C', ''));
-    const pressureValue = parseFloat(data.Pressure.value.replace(' KPa', ''));
-    // Append new data point
-    setGraphData((prevGraphData) => [
-      ...prevGraphData,
-      {
-        timestamp: new Date().toLocaleTimeString(), // Add timestamp
-        temperature: temperatureValue,
-        pressure: pressureValue,
-      },
-    ]);
-
-    const newNotifications = [];
-
-    if (data.Pressure.state === 'High') {
-      newNotifications.push({ color: 'red', message: 'High Pressure', time: 'Just now' });
-    }
-
-    if (data['Vest Temperature'].state === 'Normal') {
-      newNotifications.push({ color: 'green', message: 'Temperature is Normal', time: 'Just now' });
-    }
-
-    // Append new notifications
-    setNotifications((prev) => [...newNotifications, ...prev]);
-
-    // Update other UI elements (optional)
-    const updatedData = sensorData.map((item) => {
-      if (data[item.title]) {
-        return {
-          ...item,
-          value: data[item.title].value,
-          state: data[item.title].state,
-        };
-      }
-      return item;
+  useEffect(() => {
+    // Create socket connection
+    const socket = io('http://tn56.loca.lt', {
+      transports: ['websocket', 'polling'],
     });
 
-    setSensorData(updatedData);
-  });
+    socket.on('connect', () => {
+      console.log('Connected to server');
+    });
 
-  return () => {
-    socket.disconnect();
-  };
-}, [sensorData]);
+    socket.on('sensor_update', (data) => {
+      // Parse numeric values from strings
+      const temperatureValue = parseFloat(data['Vest Temperature'].value.replace('°C', ''));
+      const pressureValue = parseFloat(data.Pressure.value.replace(' KPa', ''));
+      
+      // Append new data point
+      setGraphData(prevGraphData => [
+        ...prevGraphData,
+        {
+          timestamp: new Date().toLocaleTimeString(),
+          temperature: temperatureValue,
+          pressure: pressureValue,
+        },
+      ]);
 
+      const newNotifications = [];
+
+      if (data.Pressure.state === 'High') {
+        newNotifications.push({ color: 'red', message: 'High Pressure', time: 'Just now' });
+      }
+
+      if (data['Vest Temperature'].state === 'Normal') {
+        newNotifications.push({ color: 'green', message: 'Temperature is Normal', time: 'Just now' });
+      }
+
+      // Append new notifications
+      setNotifications(prev => [...newNotifications, ...prev]);
+
+      // Update sensor data using functional update
+      setSensorData(prevSensorData => 
+        prevSensorData.map(item => {
+          if (data[item.title]) {
+            return {
+              ...item,
+              value: data[item.title].value,
+              state: data[item.title].state,
+            };
+          }
+          return item;
+        })
+      );
+    });
+
+    // Cleanup function to disconnect socket when component unmounts
+    return () => {
+      socket.disconnect();
+    };
+  }, []); // Empty dependency array - only run once on mount
 
   return (
     <main className="bg-[#F5F5F5] min-h-screen p-8">
@@ -131,9 +135,9 @@ useEffect(() => {
           <div
             className="bg-white p-6 rounded-xl shadow-lg 
                         transition duration-300 ease-in-out 
-                        transform hover:scale-105 hover:shadow-xl">
+                        transform hover:scale-105 hover:shadow-xl"
+          >
             <h2 className="text-[#274C77] font-bold text-xl mb-4">Notifications</h2>
-
             {notifications.map((notification, index) => (
               <div key={index} className="mb-3">
                 <div className="flex items-center space-x-2">
@@ -146,43 +150,41 @@ useEffect(() => {
           </div>
         </div>
 
-
         {/* Bottom Graphs Section */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
-          <div className='bg-white p-6 rounded-xl shadow-lg 
+          <div className="bg-white p-6 rounded-xl shadow-lg 
                           transition duration-300 ease-in-out 
                           transform hover:scale-105 hover:shadow-xl 
-                          text-center text-gray-500'>
-          <Card>
-            <CardHeader>
-              <CardTitle>Sensor History</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <LineChart width={700} height={400} data={graphData}>
-                <CartesianGrid strokeDasharray="3 3" />
-                <XAxis dataKey="timestamp" />
-                <YAxis yAxisId="left" />
-                <YAxis yAxisId="right" orientation="right" />
-                <Tooltip />
-                <Legend />
-                <Line
-                  yAxisId="left"
-                  type="monotone"
-                  dataKey="temperature"
-                  stroke="#2563eb"
-                  name="Temperature (°C)"
-                />
-                <Line
-                  yAxisId="right"
-                  type="monotone"
-                  dataKey="pressure"
-                  stroke="#16a34a"
-                  name="Pressure (KPa)"
-                />
-              </LineChart>
-            </CardContent>
-          </Card>
-
+                          text-center text-gray-500">
+            <Card>
+              <CardHeader>
+                <CardTitle>Sensor History</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <LineChart width={700} height={400} data={graphData}>
+                  <CartesianGrid strokeDasharray="3 3" />
+                  <XAxis dataKey="timestamp" />
+                  <YAxis yAxisId="left" />
+                  <YAxis yAxisId="right" orientation="right" />
+                  <Tooltip />
+                  <Legend />
+                  <Line
+                    yAxisId="left"
+                    type="monotone"
+                    dataKey="temperature"
+                    stroke="#2563eb"
+                    name="Temperature (°C)"
+                  />
+                  <Line
+                    yAxisId="right"
+                    type="monotone"
+                    dataKey="pressure"
+                    stroke="#16a34a"
+                    name="Pressure (KPa)"
+                  />
+                </LineChart>
+              </CardContent>
+            </Card>
           </div>
 
           <div

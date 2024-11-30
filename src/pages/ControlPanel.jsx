@@ -12,8 +12,10 @@ export default function Control() {
   });
 
   useEffect(() => {
-    const socket = io('http://localhost:5000'); // Adjust to your backend's actual URL
-
+    const socket = io('http://tn56.loca.lt', {
+      transports: ['websocket', 'polling'], // Ensure compatibility
+    });
+    
     socket.on('connect', () => {
       console.log('Connected to server');
     });
@@ -22,7 +24,6 @@ export default function Control() {
       // check the data structure sent by the server
       if (data.Vibration) {
         setSensorData(data);
-        return;
       }
     });
 
@@ -60,9 +61,9 @@ export default function Control() {
             <section className="w-full md:w-1/2">
               <h2 className="text-2xl font-lato font-semibold mb-4">Control Sensors</h2>
               {[
-                { name: 'Vibration', value: sensorData.Vibration, color: 'green-600', width: `${sensorData.Vibration * 10}%` },
-                { name: 'Pressure', value: sensorData.Pressure, color: 'red-400', width: `${sensorData.Pressure * 10}%` },
-                { name: 'Temperature', value: sensorData.Temperature, color: 'blue-600', width: `${sensorData.Temperature * 10}%` },
+                { name: 'Vibration', value: sensorData.Vibration, color: 'green-600', width: `${sensorData.Vibration}%` },
+                { name: 'Pressure', value: sensorData.Pressure, color: 'red-400', width: `${sensorData.Pressure /20}%` },
+                { name: 'Temperature', value: sensorData.Temperature, color: 'red-800', width: `${sensorData.Temperature}%` },
               ].map((sensor) => (
                 <div
                   key={sensor.name}
