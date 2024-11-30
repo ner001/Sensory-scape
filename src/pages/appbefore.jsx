@@ -1,55 +1,39 @@
 import React, { useState } from 'react'
-import { Routes, Route, Link, useNavigate, NavLink } from 'react-router-dom'
-import Home from './Home'
-import Board from './Board'
-import Fiche from './Fiche'
-import Control from './Control'
-import Shop from "./Shop"
+import { Routes, Route, Link, useNavigate, NavLink, Outlet } from 'react-router-dom'
 
 // Shared components and assets
-import logo from '/Logo.png'
-import lines from '/Lines.png'
-import teacher from '/Teacher.png'
-import house from '/House.png'
-import smartphone from '/Icon - Devices.png'
-import settings from '/Settings.png'
+import logo from '../../public/Logo.png'
+import lines from '../../public/Lines.png'
+import teacher from '../../public/Teacher.png'
+import house from '../../public/House.png'
+import smartphone from '../../public/Icon - Devices.png' 
+import settings from '../../public/Settings.png'
 import patients from '../assets/Patients'
 
-function Layout({ children }) {
+const Layout = (children  ) => {
   const navigate = useNavigate();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
+  
   const NavItems = [
     { 
-      to: "/", 
+      to: "/dashboard", 
       icon: house, 
       label: "Monitoring",
       activeClassName: "bg-teal-800 text-white"
     },
     { 
-      to: "/control", 
+      to: "/dashboard/control", 
       icon: house, 
       label: "DashBoard",
       activeClassName: "bg-teal-800 text-white"
     },
     { 
-      to: "/board", 
+      to: "/dashboard/board", 
       icon: smartphone, 
       label: "Control Panel",
       activeClassName: "bg-teal-800 text-white"
     },
-    { 
-      to: "/shop", 
-      icon: smartphone, 
-      label: "Shop",
-      activeClassName: "bg-teal-800 text-white"
-    },
-    { 
-      to: "/settings", 
-      icon: settings, 
-      label: "Settings",
-      activeClassName: "bg-teal-800 text-white"
-    }
   ];
 
   return (
@@ -75,12 +59,12 @@ function Layout({ children }) {
         </svg>
       </button>
       {/* Sidebar */}
-      <div className={
+      <div className={`
         fixed inset-y-0 left-0 z-40 bg-white shadow-xl transform 
         ${isMobileMenuOpen ? 'w-64' : 'w-0'}
         md:translate-x-0 transition-all duration-300 ease-in-out
         flex flex-col justify-between overflow-y-auto
-      }>
+      `}>
         <div>
           {/* Navigation Items */}
           <nav className='w-full flex flex-col gap-2 p-4 mt-16 md:mt-0'> 
@@ -88,11 +72,11 @@ function Layout({ children }) {
               <NavLink 
                 key={item.to}
                 to={item.to} 
-                className={({ isActive }) => 
+                className={({ isActive }) => `
                   text-[#274C77] pl-6 text-xl flex items-center gap-4 p-3 
                   rounded-r-3xl py-3 transition-colors group
                   ${isActive ? item.activeClassName : 'hover:bg-teal-50'}
-                }
+                `}
               >
                 <img 
                   src={item.icon} 
@@ -118,7 +102,7 @@ function Layout({ children }) {
                              hover:bg-teal-50 rounded-lg transition-colors 
                              cursor-pointer text-sm pl-6'
                   onClick={() => {
-                    navigate(/patient/${patient.id});
+                    navigate(`/patient/${patient.id}`);
                     setIsMobileMenuOpen(false);
                   }}
                 >
@@ -150,40 +134,19 @@ function Layout({ children }) {
           alt="Toggle Menu" 
           className="cursor-pointer" 
           onClick={() => {
-            console.log('Lines icon clicked'); // Debugging line
             setIsMobileMenuOpen(!isMobileMenuOpen);
           }} 
         />
         <img src={logo}/>  
         <img src={teacher}/> 
         </header> 
-        {children}
+        <div className="p-6">
+          <Outlet />
+        </div>
       </div>
     </div>
   )
 }
 
-function App() {
-  return (
-    <Layout>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/board" element={<Board />} />
-        <Route path="/control" element={<Control />} />
-        <Route path="/patient/:patientId" element={<Fiche />} />
-        <Route path="/dashboard" element={<Board />} />
-        <Route path="/shop" element={<Shop />} />
-        <Route 
-          path="/settings" 
-          element={
-            <div className='p-6 text-2xl text-center text-gray-600'>
-              Settings Page (Under Construction)
-            </div>
-          } 
-        />
-      </Routes>
-    </Layout>
-  )
-}
 
-export default App
+export default Layout;
