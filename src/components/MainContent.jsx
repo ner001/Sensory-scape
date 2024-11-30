@@ -47,8 +47,8 @@ const MainContent = () => {
         </div>
       </section>
 
-      {/* Clients Section */}
-      <section className="py-12 bg-gray-50">
+    {/* Clients Section */} 
+    <section className="py-12 bg-gray-50">
         <h2 className="text-3xl text-center font-semibold mb-8 text-gray-700">Our Clients</h2>
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6 max-w-screen-xl mx-auto">
           <img 
@@ -79,31 +79,112 @@ const MainContent = () => {
         </div>
       </section>
 
-      {/* Features Section */}
-      <section id="features" className="py-12 bg-gray-100">
-        <h2 className="text-3xl text-center font-semibold mb-8 text-gray-700">Our Features</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-screen-xl mx-auto">
-          <div className="bg-white p-6 rounded-lg shadow-lg text-center hover:bg-green-100 hover:scale-105 transform transition-all duration-300">
+    {/* Features Section */}
+      <section id="features" className="py-16 bg-gradient-to-r from-gray-50 to-gray-100">
+        <div className="text-center mb-12">
+          <h2 className="text-4xl font-bold text-gray-800">Our Key Features</h2>
+          <p className="text-lg text-gray-600 mt-4 max-w-2xl mx-auto">
+            Designed to empower therapists and support children, our product is equipped with cutting-edge features for optimal emotional development and guidance.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-screen-xl mx-auto px-6">
+          <div className="bg-white p-8 rounded-lg shadow-lg text-center transform transition-transform hover:scale-105 hover:shadow-2xl">
+            <div className="w-12 h-12 mb-4 bg-green-100 rounded-full flex items-center justify-center mx-auto">
+              <svg
+                className="w-6 h-6 text-green-600"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M9.75 9V5.25a3.75 3.75 0 017.5 0V9M7.5 9h9M4.5 11.25h15m-3.75 3.75a3.75 3.75 0 11-7.5 0m9 1.875v1.5a2.625 2.625 0 01-2.625 2.625h-6.75A2.625 2.625 0 014.5 18.375v-1.5"
+                />
+              </svg>
+            </div>
             <h4 className="text-xl font-semibold text-green-600">Monitoring</h4>
-            <p className="text-gray-600">Our membership management software provides full automation of membership renewals and payments.</p>
+            <p className="text-gray-600 mt-2">
+              Full automation of membership renewals and payments for effortless management.
+            </p>
           </div>
-          <div className="bg-white p-6 rounded-lg shadow-lg text-center hover:bg-green-100 hover:scale-105 transform transition-all duration-300">
+
+          <div className="bg-white p-8 rounded-lg shadow-lg text-center transform transition-transform hover:scale-105 hover:shadow-2xl">
+            <div className="w-12 h-12 mb-4 bg-green-100 rounded-full flex items-center justify-center mx-auto">
+              <svg
+                className="w-6 h-6 text-green-600"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M8 12h.01M12 12h.01M16 12h.01M9 16h6m2 4H7a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v12a2 2 0 01-2 2z"
+                />
+              </svg>
+            </div>
             <h4 className="text-xl font-semibold text-green-600">Control Panel</h4>
-            <p className="text-gray-600">Monitors emotional responses and adjusts guidance.</p>
+            <p className="text-gray-600 mt-2">
+              Track emotional responses and dynamically adjust therapeutic guidance.
+            </p>
           </div>
-          <div className="bg-white p-6 rounded-lg shadow-lg text-center hover:bg-green-100 hover:scale-105 transform transition-all duration-300">
+
+          <div className="bg-white p-8 rounded-lg shadow-lg text-center transform transition-transform hover:scale-105 hover:shadow-2xl">
+            <div className="w-12 h-12 mb-4 bg-green-100 rounded-full flex items-center justify-center mx-auto">
+              <svg
+                className="w-6 h-6 text-green-600"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M11.25 6.75h9M11.25 12h9m-9 5.25h9m-13.5-7.5H5.25a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25h4.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25z"
+                />
+              </svg>
+            </div>
             <h4 className="text-xl font-semibold text-green-600">Dashboards</h4>
-            <p className="text-gray-600">Provides physical stimuli to support emotional development.</p>
+            <p className="text-gray-600 mt-2">
+              Intuitive dashboards deliver actionable insights and physical stimuli for development.
+            </p>
           </div>
-          <div className="bg-white p-6 rounded-lg shadow-lg text-center hover:bg-green-100 hover:scale-105 transform transition-all duration-300">
+
+          <div className="bg-white p-8 rounded-lg shadow-lg text-center transform transition-transform hover:scale-105 hover:shadow-2xl">
+            <div className="w-12 h-12 mb-4 bg-green-100 rounded-full flex items-center justify-center mx-auto">
+              <svg
+                className="w-6 h-6 text-green-600"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2m16-8a4 4 0 00-8-3.874M12 12.126a4 4 0 00-8 3.874m16 0H4"
+                />
+              </svg>
+            </div>
             <h4 className="text-xl font-semibold text-green-600">Research</h4>
-            <p className="text-gray-600">Allows specialists to tailor the experience to each child.</p>
+            <p className="text-gray-600 mt-2">
+              Tailored experiences for every child based on individual needs and progress.
+            </p>
           </div>
         </div>
       </section>
 
       {/* About Us Section */}
-      <section className="py-12 bg-gray-50">
+      <section className="py-12 bg-green-50">
         <div className="flex flex-col md:flex-row items-center space-y-6 md:space-y-0 md:space-x-12 max-w-screen-xl mx-auto">
           <div className="flex-1">
             <img src={logo} alt="logo" className="w-40 md:w-56" />
@@ -142,30 +223,88 @@ const MainContent = () => {
         </div>
       </section>
 
-      {/* Causes Section */}
-      <section className="py-12 bg-gray-100">
-        <h2 className="text-3xl text-center font-semibold mb-8 text-gray-700">Why Our Product is Important?</h2>
-        <p className="text-lg text-center mb-8 text-gray-600 max-w-screen-lg mx-auto">
-          Our product is important because it provides a comprehensive solution for supporting the emotional development of children
-          with autism. Through these features, it enables specialists to enhance the effectiveness of therapy and promote the well-being
-          of these children.
-        </p>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-screen-xl mx-auto">
-          <div className="bg-white p-6 rounded-lg shadow-lg hover:scale-105 transform transition-all duration-300">
+    {/* Causes Section */}
+      <section className="py-16 bg-gradient-to-r from-green-50 to-gray-100">
+        <div className="text-center mb-12">
+          <h2 className="text-4xl font-bold text-gray-800">Why Choose Our Product?</h2>
+          <p className="text-lg text-gray-600 mt-4 max-w-2xl mx-auto">
+            Our product is a game-changer for supporting the emotional development of children with autism. Designed with care and 
+            expertise, it empowers specialists to provide effective therapy while promoting long-term well-being.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-screen-xl mx-auto px-6">
+          <div className="bg-white p-8 rounded-lg shadow-lg transform transition-transform hover:scale-105">
+            <div className="w-12 h-12 mb-4 bg-green-100 rounded-full flex items-center justify-center">
+              <svg
+                className="w-6 h-6 text-green-600"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M12 8v4l3 3M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-5h4m-6 4V5a2 2 0 00-2-2H6a2 2 0 00-2 2v9"
+                />
+              </svg>
+            </div>
             <h4 className="text-xl font-semibold text-green-600">Emotional Development</h4>
-            <p className="text-gray-600">Helps children understand and regulate their emotions.</p>
+            <p className="text-gray-600 mt-2">
+              Helps children understand, express, and regulate their emotions in a supportive environment.
+            </p>
           </div>
-          <div className="bg-white p-6 rounded-lg shadow-lg hover:scale-105 transform transition-all duration-300">
+
+          <div className="bg-white p-8 rounded-lg shadow-lg transform transition-transform hover:scale-105">
+            <div className="w-12 h-12 mb-4 bg-green-100 rounded-full flex items-center justify-center">
+              <svg
+                className="w-6 h-6 text-green-600"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M5 13l4 4L19 7m2-2h-7a1 1 0 01-1-1V2a1 1 0 00-1-1H8a1 1 0 00-1 1v4"
+                />
+              </svg>
+            </div>
             <h4 className="text-xl font-semibold text-green-600">Therapist Guidance</h4>
-            <p className="text-gray-600">Supports therapists in providing targeted emotional training.</p>
+            <p className="text-gray-600 mt-2">
+              Provides tools for therapists to deliver tailored emotional training for optimal progress.
+            </p>
           </div>
-          <div className="bg-white p-6 rounded-lg shadow-lg hover:scale-105 transform transition-all duration-300">
+
+          <div className="bg-white p-8 rounded-lg shadow-lg transform transition-transform hover:scale-105">
+            <div className="w-12 h-12 mb-4 bg-green-100 rounded-full flex items-center justify-center">
+              <svg
+                className="w-6 h-6 text-green-600"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M14 9l-3 3 3 3m0 0H7m6 0a2 2 0 100-4m6 8a9 9 0 11-18 0 9 9 0 0118 0z"
+                />
+              </svg>
+            </div>
             <h4 className="text-xl font-semibold text-green-600">Long-Term Impact</h4>
-            <p className="text-gray-600">Promotes social skills and overall emotional well-being.</p>
+            <p className="text-gray-600 mt-2">
+              Encourages the development of essential social skills and emotional resilience for life.
+            </p>
           </div>
         </div>
       </section>
-    </main>
+    </main> 
   );
 };
 

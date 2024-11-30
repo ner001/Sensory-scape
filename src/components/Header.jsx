@@ -9,7 +9,7 @@ const Header = () => {
         {/* Left side: Navigation Links */}
         <div className="flex space-x-9">
           <Link to="/" className="text-lg  text-gray-800 hover:text-green-500 transition-all duration-300">Home</Link>
-          <Link to="/features" className="text-lg text-gray-800 hover:text-green-500 transition-all duration-300">Features</Link>
+          <Link  to="/features" className="text-lg text-gray-800 hover:text-green-500 transition-all duration-300">Features</Link>
           <Link to="/forums" className="text-lg text-gray-800 hover:text-green-500 transition-all duration-300">Forums</Link>
         </div>
         

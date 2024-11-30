@@ -18,8 +18,8 @@ const SignIn = () => {
   };
 
   return (
-    <div className="flex justify-center items-center min-h-screen bg-gradient-to-r from-green-400 to-teal-500">
-      <div className="bg-white rounded-lg shadow-lg w-full max-w-sm p-8 space-y-6">
+    <div className="flex justify-center items-center min-h-screen bg-gradient-to-r from-green-400 to-gray-800">
+      <div className="bg-white p-6 rounded-lg shadow-lg w-full max-w-md">
         <h1 className="text-3xl font-semibold text-center text-gray-800">Welcome to SensoryScape</h1>
         <form className="space-y-6" onSubmit={handleSignIn}>
           {/* Email input */}
@@ -57,7 +57,7 @@ const SignIn = () => {
           {/* Sign-In Button */}
           <div className="flex items-center justify-between">
             <button
-              className="w-full py-3 bg-green-600 text-white font-semibold rounded-lg hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500"
+              className="w-full py-3 bg-green-600 text-white py-2 px-4 rounded-lg hover:bg-teal-700 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:ring-offset-2"
               type="submit"
             >
               Sign In

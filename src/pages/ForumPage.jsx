@@ -9,7 +9,7 @@ const ForumPage = () => {
       <header className="bg-white shadow-md py-4">
         <div className="container mx-auto flex justify-between items-center px-4">
           <div className="flex items-center">
-            <img src=".\src\assets\g.png" alt="SensoryForums" className="h-8 mr-4" />
+            <img src=".\src\assets\LOGO2.png" alt="SensoryForums" className="h-8 mr-4" />
           </div>
           <button className="bg-green-500 hover:bg-green-600 text-white font-medium py-2 px-4 rounded-lg flex items-center space-x-2">
             <HiOutlinePlusCircle className="text-lg" />
@@ -74,14 +74,7 @@ const ForumPage = () => {
                   <p className="text-gray-700">
                     My son suffers from intense lightening, how can I help him?
                   </p>
-                  <div className="flex items-center space-x-2 mt-2 text-gray-500 text-sm">
-                    <span>gelang</span>
-                    <span>issue</span>
-                    <span>overflow</span>
-                    <span>125</span>
-                    <span>15</span>
-                    <span>155</span>
-                  </div>
+
                 </div>
 
                 <div className="bg-gray-50 rounded-lg p-4">
@@ -95,14 +88,7 @@ const ForumPage = () => {
                   <p className="text-gray-700">
                     What is a difference between Hyper nad Hyposensitivity?
                   </p>
-                  <div className="flex items-center space-x-2 mt-2 text-gray-500 text-sm">
-                    <span>java</span>
-                    <span>javascript</span>
-                    <span>wifi</span>
-                    <span>125</span>
-                    <span>15</span>
-                    <span>155</span>
-                  </div>
+  
                 </div>
 
                 <div className="bg-gray-50 rounded-lg p-4">
@@ -116,14 +102,7 @@ const ForumPage = () => {
                   <p className="text-gray-700">
                     What are the best centers to enroll my daughter in Grand Tunis?
                   </p>
-                  <div className="flex items-center space-x-2 mt-2 text-gray-500 text-sm">
-                    <span>svelte</span>
-                    <span>javascript</span>
-                    <span>recommendations</span>
-                    <span>125</span>
-                    <span>15</span>
-                    <span>155</span>
-                  </div>
+  
                 </div>
 
                 <div className="bg-gray-50 rounded-lg p-4">
@@ -143,10 +122,8 @@ const ForumPage = () => {
           </div>
         </div>
       </main>
-
-      <footer className="bg-gray-800 text-white py-6">
+      <footer >
       <Footer />
-
       </footer>
     </div>
   );

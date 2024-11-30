@@ -1,9 +1,10 @@
 import React from 'react';
 import Header from "../components/Header";
 
+
 const Contact = () => {
   return (
-    <div className="shop-page bg-gradient-to-r from-green-400 to-teal-500 font-sans">
+    <div className="shop-page bg-gradient-to-r  from-gray-800 to-green-400 font-sans">
       {/* Header Section */}
       <header className="header sticky top-0 z-50">
         <Header />
@@ -14,7 +15,7 @@ const Contact = () => {
         <h2 className="text-4xl font-bold text-center text-gray-800">
           Contact <span className="text-green-600">Us</span>
         </h2>
-        <p className="text-center text-gray-600 mt-4">
+        <p className="text-center text-white mt-4">
           Have a question or remark? We'd love to hear from you!
         </p>
 
@@ -87,7 +88,7 @@ const Contact = () => {
                     d="M8 12h.01M16 12h.01M12 16v.01"
                   />
                 </svg>
-                545 Mavis Island, IL 91901
+                Technopole El ghazela ,Ariana
               </li>
               <li className="flex items-center">
                 <svg
@@ -104,7 +105,7 @@ const Contact = () => {
                     d="M3 8l7-4 7 4M3 8v8a4 4 0 004 4h10a4 4 0 004-4V8M7 21h10"
                   />
                 </svg>
-                +2034 4040 3030
+                +216 51 337 399
               </li>
               <li className="flex items-center">
                 <svg
@@ -127,14 +128,12 @@ const Contact = () => {
                     d="M12 20h.01"
                   />
                 </svg>
-                hello@gmail.com
+                sensoryscape@gmail.com
               </li>
             </ul>
           </div>
         </div>
       </section>
-
-
     </div>
   );
 };

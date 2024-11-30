@@ -1,9 +1,10 @@
+// App.jsx
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { AuthProvider } from './AuthContext';
 import 'typeface-inter';
-import LandingPage from './LandingPage'; 
-import SignIn from './SignIn'; 
+import LandingPage from './LandingPage';
+import SignIn from './SignIn';
 import SignUp from './SignUp';
 import Shop from './Shop';
 import ForumPage from './ForumPage';
