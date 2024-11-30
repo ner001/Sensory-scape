@@ -136,7 +136,13 @@ const Layout = (children  ) => {
             setIsMobileMenuOpen(!isMobileMenuOpen);
           }} 
         />
-        <img src={logo}/>  
+        <img src={logo}
+          alt="SensoryScape" 
+          className="cursor-pointer"
+          onClick={() => {
+            navigate('/');
+          }}
+        />  
         <img src={teacher}/> 
         </header> 
         <div className="p-6">

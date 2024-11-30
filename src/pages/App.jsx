@@ -13,6 +13,8 @@ import Board from './Board';
 import Control from './ControlPanel';
 import Fiche from './Fiche';
 import Home from './Home';
+import Contact from './Contact';
+import About from './About';
 
 function App() {
   return (
@@ -24,6 +26,8 @@ function App() {
         <Route path="/signin" element={<SignIn />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/shop" element={<Shop />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/about" element={<About />} />
 
         {/* Layout Routes */}
         <Route path="/dashboard" element={<Layout />}>
