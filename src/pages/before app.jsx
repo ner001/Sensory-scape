@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Routes, Route, Link, useNavigate, NavLink } from 'react-router-dom'
+import { Routes, Route, Link, useNavigate, NavLink, Outlet } from 'react-router-dom'
 
 // Shared components and assets
 import logo from '../../public/Logo.png'
@@ -10,42 +10,30 @@ import smartphone from '../../public/Icon - Devices.png'
 import settings from '../../public/Settings.png'
 import patients from '../assets/Patients'
 
-const Layout = (children) => {
+const Layout = (children  ) => {
   const navigate = useNavigate();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   
   const NavItems = [
     { 
-      to: "/", 
+      to: "/dashboard", 
       icon: house, 
       label: "Monitoring",
       activeClassName: "bg-teal-800 text-white"
     },
     { 
-      to: "/control", 
+      to: "/dashboard/control", 
       icon: house, 
       label: "DashBoard",
       activeClassName: "bg-teal-800 text-white"
     },
     { 
-      to: "/board", 
+      to: "/dashboard/board", 
       icon: smartphone, 
       label: "Control Panel",
       activeClassName: "bg-teal-800 text-white"
     },
-    { 
-      to: "/shop", 
-      icon: smartphone, 
-      label: "Shop",
-      activeClassName: "bg-teal-800 text-white"
-    },
-    { 
-      to: "/settings", 
-      icon: settings, 
-      label: "Settings",
-      activeClassName: "bg-teal-800 text-white"
-    }
   ];
 
   return (
@@ -146,14 +134,15 @@ const Layout = (children) => {
           alt="Toggle Menu" 
           className="cursor-pointer" 
           onClick={() => {
-            console.log('Lines icon clicked'); // Debugging line
             setIsMobileMenuOpen(!isMobileMenuOpen);
           }} 
         />
         <img src={logo}/>  
         <img src={teacher}/> 
         </header> 
-        {children}
+        <div className="p-6">
+          <Outlet />
+        </div>
       </div>
     </div>
   )

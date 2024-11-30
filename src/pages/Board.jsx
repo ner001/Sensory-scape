@@ -3,7 +3,7 @@ import screen1 from '/Group 10.png';
 import screen2 from '/Group 11.png'; 
 import patients from '../assets/Patients';
 
-export default function Board() {
+export default function Board(){
   const [searchTerm, setSearchTerm] = useState('');
 
   // Filter patients based on search term
