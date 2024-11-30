@@ -31,7 +31,7 @@ const patients = [
     {
       id: 2,
       img: tfol,  
-      name:"Chahba",// Replace with the appropriate image reference
+      name:"Rahma",// Replace with the appropriate image reference
       age: 8,
       Gender: "Female",
       Location: "Sfax, Tunisia",

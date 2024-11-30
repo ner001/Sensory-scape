@@ -1,5 +1,6 @@
 import React, { useState, useMemo } from 'react';
 import Footer from "../components/Footer";
+import { Link } from 'react-router-dom';
 import { FaQuestionCircle, FaTags, FaTrophy, FaUserAlt, FaThumbsUp, FaCommentDots, FaTimes } from 'react-icons/fa';
 import { HiOutlinePlusCircle } from 'react-icons/hi';
 
@@ -31,6 +32,7 @@ const ForumPage = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [newThread, setNewThread] = useState({ content: '' });
   const [activeFilter, setActiveFilter] = useState('new');
+  const [activeMenu, setActiveMenu] = useState('');
 
   // Use useMemo to memoize filtered threads
   const filteredThreads = useMemo(() => {
@@ -65,12 +67,51 @@ const ForumPage = () => {
     setIsModalOpen(false);
   };
 
+  const menuItems = [
+    { 
+      icon: FaQuestionCircle, 
+      name: 'Questions', 
+      key: 'questions' 
+    },
+    { 
+      icon: FaTags, 
+      name: 'Tags', 
+      key: 'tags' 
+    },
+    { 
+      icon: FaTrophy, 
+      name: 'Ranking', 
+      key: 'ranking' 
+    },
+    { 
+      icon: FaUserAlt, 
+      name: 'Your questions', 
+      key: 'your-questions' 
+    },
+    { 
+      icon: FaThumbsUp, 
+      name: 'Your answers', 
+      key: 'your-answers' 
+    },
+    { 
+      icon: FaCommentDots, 
+      name: 'Your likes & votes', 
+      key: 'likes-votes' 
+    }
+  ];
+
   return (
     <div className="bg-gray-100 min-h-screen">
       <header className="bg-white shadow-md py-4">
         <div className="container mx-auto flex justify-between items-center px-4">
           <div className="flex items-center">
-            <img src=".\src\assets\LOGO2.png" alt="SensoryForums" className="h-8 mr-4" />
+            <Link to="/">
+              <img 
+                src=".\src\assets\LOGO2.png" 
+                alt="SensoryForums"  
+                className="h-8 mr-4 cursor-pointer hover:opacity-75 transition-opacity"
+              />
+            </Link>
           </div>
           <button 
             onClick={() => setIsModalOpen(true)}
@@ -88,71 +129,61 @@ const ForumPage = () => {
           <div className="col-span-1 bg-white shadow-md rounded-lg p-6">
             <h3 className="font-bold text-gray-800 mb-4">MENU</h3>
             <ul className="space-y-2 text-gray-600">
-              <li className="flex items-center space-x-2 hover:text-green-700 cursor-pointer">
-                <FaQuestionCircle className="text-xl" />
-                <span>Questions</span>
-              </li>
-              <li className="flex items-center space-x-2 hover:text-green-700 cursor-pointer">
-                <FaTags className="text-xl" />
-                <span>Tags</span>
-              </li>
-              <li className="flex items-center space-x-2 hover:text-green-700 cursor-pointer">
-                <FaTrophy className="text-xl" />
-                <span>Ranking</span>
-              </li>
-              <li className="flex items-center space-x-2 hover:text-green-700 cursor-pointer">
-                <FaUserAlt className="text-xl" />
-                <span>Your questions</span>
-              </li>
-              <li className="flex items-center space-x-2 hover:text-green-700 cursor-pointer">
-                <FaThumbsUp className="text-xl" />
-                <span>Your answers</span>
-              </li>
-              <li className="flex items-center space-x-2 hover:text-green-700 cursor-pointer">
-                <FaCommentDots className="text-xl" />
-                <span>Your likes & votes</span>
-              </li>
+              {menuItems.map((item) => (
+                <li 
+                  key={item.key}
+                  onClick={() => setActiveMenu(item.key)}
+                  className={`flex items-center space-x-2 hover:text-green-700 cursor-pointer ${
+                    activeMenu === item.key ? 'text-green-700' : ''
+                  }`}
+                >
+                  <item.icon className="text-xl" />
+                  <span>{item.name}</span>
+                </li>
+              ))}
             </ul>
           </div>
 
-          {/* Thread List */}
-          <div className="col-span-3">
-            <div className="bg-white shadow-md rounded-lg p-6 mb-6">
-              <div className="flex justify-between items-center mb-4">
-                <h2 className="font-bold text-gray-800">Thread</h2>
-                <div className="flex space-x-4">
-                  {['new', 'top', 'hot', 'closed'].map((filter) => (
-                    <button
-                      key={filter}
-                      onClick={() => setActiveFilter(filter)}
-                      className={`${
-                        activeFilter === filter
-                          ? 'text-blue-500'
-                          : 'text-gray-500 hover:text-gray-600'
-                      }`}
-                    >
-                      {filter.charAt(0).toUpperCase() + filter.slice(1)}
-                    </button>
+          {/* Thread List - Only show when 'Questions' is selected */}
+          {activeMenu === 'questions' && (
+            <div className="col-span-3">
+              <div className="bg-white shadow-md rounded-lg p-6 mb-6">
+                <div className="flex justify-between items-center mb-4">
+                  <h2 className="font-bold text-gray-800">Thread</h2>
+                  <div className="flex space-x-4">
+                    {['new', 'top', 'hot', 'closed'].map((filter) => (
+                      <button
+                        key={filter}
+                        onClick={() => setActiveFilter(filter)}
+                        className={`${
+                          activeFilter === filter
+                            ? 'text-blue-500'
+                            : 'text-gray-500 hover:text-gray-600'
+                        }`}
+                      >
+                        {filter.charAt(0).toUpperCase() + filter.slice(1)}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="space-y-6">
+                  {filteredThreads.map((thread) => (
+                    <div key={thread.id} className="bg-gray-50 rounded-lg p-4">
+                      <div className="flex items-center justify-between mb-2">
+                        <div className="flex items-center">
+                          <img src={thread.avatar} alt={thread.author} className="rounded-full w-8 h-8 mr-2" />
+                          <span className="font-medium text-gray-800">{thread.author}</span>
+                        </div>
+                        <div className="text-gray-500 text-sm">{thread.timestamp}</div>
+                      </div>
+                      <p className="text-gray-700">{thread.content}</p>
+                    </div>
                   ))}
                 </div>
               </div>
-
-              <div className="space-y-6">
-                {filteredThreads.map((thread) => (
-                  <div key={thread.id} className="bg-gray-50 rounded-lg p-4">
-                    <div className="flex items-center justify-between mb-2">
-                      <div className="flex items-center">
-                        <img src={thread.avatar} alt={thread.author} className="rounded-full w-8 h-8 mr-2" />
-                        <span className="font-medium text-gray-800">{thread.author}</span>
-                      </div>
-                      <div className="text-gray-500 text-sm">{thread.timestamp}</div>
-                    </div>
-                    <p className="text-gray-700">{thread.content}</p>
-                  </div>
-                ))}
-              </div>
             </div>
-          </div>
+          )}
         </div>
       </main>
 
@@ -195,10 +226,6 @@ const ForumPage = () => {
           </div>
         </div>
       )}
-
-      <footer>
-        <Footer />
-      </footer>
     </div>
   );
 };

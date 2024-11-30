@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import child from '../assets/child.jpg'; 
 import logo from '../assets/Logo.png';
 import Button from "../components/Button.jsx";
+import video from "../assets/trustee.mp4";
 
 const MainContent = () => {
   const navigate = useNavigate();
@@ -304,7 +305,30 @@ const MainContent = () => {
           </div>
         </div>
       </section>
-    </main> 
+  {/* Video Section */}
+  <section className="py-16 bg-gradient-to-r from-green-50 to-gray-100">
+    <div className="flex flex-col items-center px-4">
+      <h2 className="text-4xl font-bold text-gray-800 mb-6">Who Trusted Us</h2>
+      <p className="text-lg text-gray-600 mb-8 max-w-2xl text-center">
+        The Expert Center is a leading autism support institution that has placed its trust in our innovative solution. 
+      </p>
+      <img 
+            src='.\src\assets\lexpert.png' 
+            alt="Client 2" 
+            className="h-16 object-contain "
+          />      
+      <div className="relative w-full max-w-4xl h-64 md:h-96">
+        <video 
+          className="w-full h-full object-cover rounded-lg shadow-lg" 
+          controls 
+        >
+          <source src={video} type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    </div>
+  </section>
+</main> 
   );
 };
 
