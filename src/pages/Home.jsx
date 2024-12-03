@@ -5,7 +5,7 @@ import img7 from '/Group 37.png';
 import img8 from '/Group 35.png';
 import img9 from '/Group 1000001772 (1).png';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts';
-import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
+import { Card, CardHeader, CardTitle, CardContent } from '../../@/components/ui/card';
 
 const Home = () => {
   const [sensorData, setSensorData] = useState([
@@ -74,7 +74,7 @@ const Home = () => {
       }
 
       // Append new notifications
-      setNotifications(prev => [...newNotifications, ...prev]);
+      setNotifications(prev => [...newNotifications, ...prev.slice(0, 4)]);
 
       // Update sensor data using functional update
       setSensorData(prevSensorData => 

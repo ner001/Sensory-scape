@@ -3,7 +3,6 @@ import { useNavigate } from "react-router-dom";
 import child from '../assets/child.jpg'; 
 import logo from '../assets/Logo.png';
 import Button from "../components/Button.jsx";
-import video from "../assets/trustee.mp4";
 
 const MainContent = () => {
   const navigate = useNavigate();
@@ -316,16 +315,7 @@ const MainContent = () => {
             src='.\src\assets\lexpert.png' 
             alt="Client 2" 
             className="h-16 object-contain "
-          />      
-      <div className="relative w-full max-w-4xl h-64 md:h-96">
-        <video 
-          className="w-full h-full object-cover rounded-lg shadow-lg" 
-          controls 
-        >
-          <source src={video} type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
-      </div>
+          /> 
     </div>
   </section>
 </main> 
